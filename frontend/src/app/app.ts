@@ -3,9 +3,10 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,                  // ← Muy importante
+  imports: [RouterOutlet],           // ← Valido ahora que es standalone
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']          // ← Cambia styleUrl por styleUrls
 })
 export class App {
   protected title = 'frontend';

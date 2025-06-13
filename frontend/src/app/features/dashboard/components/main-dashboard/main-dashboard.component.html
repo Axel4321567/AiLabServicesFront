@@ -1,0 +1,17 @@
+<mat-grid-list cols="2" rowHeight="1:1" gutterSize="16px">
+  <mat-grid-tile *ngFor="let cfg of chartConfigs">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ cfg.data.datasets[0].label }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <canvas
+          baseChart
+          [data]="cfg.data"
+          [options]="cfg.options"
+          [type]="cfg.type">
+        </canvas>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
